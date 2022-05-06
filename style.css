@@ -1,0 +1,111 @@
+			div{
+				margin: 15px;
+				
+			}
+			
+			input {
+				margin-right: 15px;
+			}
+			
+			.invisible{
+				display: none;
+			}
+			.visible{
+				display: block;
+			}
+			.red{
+				color: white;
+				background-color: red;
+			}
+			
+			.black{
+				color: white;
+				background-color: black;
+			}
+			
+			.rich {
+				color: green;
+			}
+			
+			.broke {
+				color: red;
+			}
+			
+			.green{
+				color: black;
+				background-color: green;
+			}
+			
+			.btntest {
+				background: url(resources/play-1173551_640.png) no-repeat;
+				 background-size: 32px;
+				 float: left;
+				 height: 39px;
+				 width: 44px;
+			}
+			
+			.buttontext{
+				margin:	0px;
+				margin-top: 10px;
+				width: 130px;
+			}
+			
+			.bleached{
+				opacity: 0;
+			}
+			
+			.unbleached {
+				opacity: 1;
+			}
+			
+			
+			#lastnumber{
+				border: 2px solid grey;
+				width: 10 px;
+				heigth: 10px;
+			}
+			
+			#credit {
+				font-size: 20px;
+			}
+			
+			#log{
+				background-color: black;
+				color: white;	
+				font-family: "courier new", sans-serif;
+				padding-top: 4px;
+				padding-left: 6px;
+				height: 192px;
+				width: 99%;
+			}
+			
+			.turnButton {
+				padding-top: 4px;
+				height: 40px;
+				width: 40px;
+				border: none;
+				background-color: #b4edff;
+			}
+			
+			.turnButton:active {
+				opacity: 0.7;
+			}
+			
+			#turnButtonBlack{
+				background-color: black;
+				color: white;
+				margin-right: 10px;
+			}
+
+			#turnButtonRed{
+				background-color: red;
+			}
+			
+			#hud {
+				background-color: #e3d8c9;
+				overflow: hidden;
+				margin-left: -20px;
+				padding-left: 20px;
+				padding-top: 6px;
+				padding-bottom: 16px;
+			}

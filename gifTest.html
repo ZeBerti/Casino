@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
+</head>
+<body>
+    A <img id="turngif" src="https://i.gifer.com/8C5T.gif" class="invisible">
+
+    <div class="media-wrap">
+        a<a class="media-url" itemprop="url" href="">
+            b<video class="media-url__media" loop autoplay playsinline>
+                c<source src="resources/rouletteTurnGif.mp4" itemprop="contentUrl" type="video/mp4"></video>
+        </a>
+    </div>
+	
+	GIF
+	<img id="turngif" src="resources/img/roulette.gif" class="xinvisible">
+
+    <button id="start" onclick="startAnimation()">Start Animation</button>
+    <button id="stop"  onclick="stopAnimation()">Stop Animation</button>
+    <script>
+        function startAnimation(){
+            document.getElementById("turngif").className="visible"
+        }
+
+        function stopAnimation(){
+            console.log("stop");
+            document.getElementById("turngif").className="invisible"
+        }
+    </script>
+
+    <video width="320" height="240" controls>
+        <source src="resources/rouletteTurnGif.mp4" autoplay loop type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+</body>
+</html>

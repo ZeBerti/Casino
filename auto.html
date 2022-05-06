@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>Casino simulation automated</title>
+		<meta charset="UTF-8"> 		
+		<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+		
+	</head>
+
+
+	<body>
+
+	<div>
+		<h1>Casino simulaton automated</h1>
+	</div>
+	
+	<div>
+		<!-- Kontostand -->
+		<h2>Kontostand</h2>
+		Credit: <input type="number" id="credit" value="100">
+	</div>
+	<div>
+		<img id="rouletteImg" width="350" src="https://media.istockphoto.com/vectors/disc-roulette-for-casino-games-view-from-above-vector-id854833762?k=6&m=854833762&s=612x612&w=0&h=Sj_aYkEP7lxFl9wuMW58PSz5QFW4OyjSg8Z-fRPn1eU=">		
+		<img id="turngif" src="https://i.gifer.com/8C5T.gif" class="invisible">
+
+		<div id="lastnumberdiv" class="bleached">
+			<label>Last number: </label><span id="lastnumber">no turn yet</span>
+		</div>
+	</div>
+	
+	<div>
+		<h3> Bet </h3>
+		Initial bet: <input id="placedBet" type="number" placeholder="1" value="1"> 
+		Max. Loops <input type="number" id="maxLoopsInput" value="30"> 
+		Factor after loose <input type="number" id="factor" value="2">
+		Time between bets <input type="number" id="timeBetweenBets" value="150">
+
+	</div>
+	
+	<div>
+		<button class="turnButton" onclick="turnAutomated();">
+			<span class="btntest"></span>
+			<div class="buttontext">
+				<span>start progress</span></button>
+			</div>
+	
+	</div>
+	
+	<div>
+		<textarea id="log"> > Start progress to auto-bet &#13;&#10 > </textarea>
+	</div>
+
+	 <script src="resources/utils.js"></script>
+	
+	</body>
+</html>
