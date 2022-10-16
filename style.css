@@ -37,7 +37,8 @@
 			}
 			
 			.btntest {
-				background: url(resources/play-1173551_640.png) no-repeat;
+		/*		background: url(resources/play-1173551_640.png) no-repeat; */
+		        background: red;
 				 background-size: 32px;
 				 float: left;
 				 height: 39px;
