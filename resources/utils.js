@@ -163,7 +163,7 @@ function resetStats(){
 }
 
 function getCredit(){
-	return document.getElementById("credit").innerHTML;	
+	return document.getElementById("credit").value;
 }
 
 function turnAutomated(){
@@ -173,8 +173,9 @@ function turnAutomated(){
 }
 
 function increaseTurnCounter() {
-	let turnCounter = parseInt(document.getElementById("turn-counter").innerHTML) + 1;
-	document.getElementById("turn-counter").innerHTML = turnCounter;
+    // ToDo turn-counter seems to be a non existing element
+	let turnCounter = -1; //parseInt(document.getElementById("turn-counter").innerHTML) + 1;
+	//document.getElementById("turn-counter").innerHTML = turnCounter;
 }
 
 function turn(){
@@ -202,13 +203,13 @@ function turn(){
 		
 		var restLoops = document.getElementById("maxLoopsInput").value;
 		document.getElementById("maxLoopsInput").value = restLoops-1;
-//		if(restLoops > 1){
-//			turnRed();
-//			countLoops++;
-//		} else {
-//			doLog("End after " + countLoops + " bets");
-//			displayStats();
-//		}
+		if(restLoops > 1){
+			turnRed();
+			countLoops++;
+		} else {
+			doLog("End after " + countLoops + " bets");
+			displayStats();
+		}
 	}, document.getElementById("timeBetweenBets").value);
 }
 
