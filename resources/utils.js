@@ -1,3 +1,5 @@
+let isAutomated = false; // default is manual
+
 var credit = getCredit();
 var GREEN = 0;
 var RED = 1;
@@ -9,12 +11,12 @@ var placedBet = 0;
 
 // auto
 var enterCode = "&#13;&#10";
-var countLoops = 0;
 var maxCredit = credit;
 var maxBet = placedBet;
 var credits = [];
 var bets = [];
 var numbers = [];
+credits.push(credit);
 
 var log = document.getElementById("log");
 log.addEventListener("keypress", logKeypressEvent);
@@ -158,31 +160,28 @@ function resetStats(){
 	credit = 50;
 	maxCredit = credit;
 	numbers = [];
-	credits = [];
+	credits = [].push(credit);
 	bets = [];
 }
 
 function getCredit(){
-	return document.getElementById("credit").value;
+    if(!isNaN(document.getElementById("credit").value))
+        return document.getElementById("credit").value;
+    else
+        return document.getElementById("credit").innerHTML;
+
 }
 
 function turnAutomated(){
+    isAutomated = true;
 	credit = getCredit();
-	countLoops = 0;
 	turnRed();
-}
-
-function increaseTurnCounter() {
-    // ToDo turn-counter seems to be a non existing element
-	let turnCounter = -1; //parseInt(document.getElementById("turn-counter").innerHTML) + 1;
-	//document.getElementById("turn-counter").innerHTML = turnCounter;
 }
 
 function turn(){
 	
 	placedBet = document.getElementById("placedBet").value;
-	
-	increaseTurnCounter();
+
 	startAnimation();
 					
 	makeBet(placedBet);
@@ -203,11 +202,10 @@ function turn(){
 		
 		var restLoops = document.getElementById("maxLoopsInput").value;
 		document.getElementById("maxLoopsInput").value = restLoops-1;
-		if(restLoops > 1){
+		if(isAutomated && restLoops > 1){
 			turnRed();
-			countLoops++;
-		} else {
-			doLog("End after " + countLoops + " bets");
+		} else if(isAutomated) {
+			doLog("End after " + numbers.length + " bets");
 			displayStats();
 		}
 	}, document.getElementById("timeBetweenBets").value);
@@ -222,10 +220,25 @@ function displayStats(){
 
 }
 
+function getColor(number){
+	var className;
+	if(number==0){
+		className="green";
+
+	// TODO not correct according to the graphic
+	} else if(number%2==0){
+		className="red";
+	} else {
+		className="black";
+	}
+	return className;
+}
+
 function getColorEnum(number){
 	var className;
 	if(number==0){
 		className=GREEN
+    // TODO not correct according to the graphic
 	} else if(number%2==0){
 		className=RED;
 	} else {
@@ -258,19 +271,6 @@ function calcNewCredit(){
 		doubleBet();
 	}
 	displayCredit();
-}
-
-
-function  getColor(number){
-	var className;
-	if(number==0){
-		className="green";
-	} else if(number%2==0){
-		className="red";
-	} else {
-		className="black";
-	}
-	return className;
 }
 
 function displayCredit(){

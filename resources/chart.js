@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-<body>
-<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 
-<script>
-
-chart([7,8,8,9,9,9,10,11,14,14,15]);
-
-function chart (allValues) {
+function createChart (allValues) {
     let xValues = [];
     let yValues = allValues;
 
     for(let i = 0; i<allValues.length; i++) {
-        xValues.push(i);
+        xValues.push(i+1);
     }
 
     new Chart("myChart", {
@@ -37,7 +28,3 @@ function chart (allValues) {
     });
 }
 
-</script>
-
-</body>
-</html>
